@@ -40,21 +40,61 @@ public class Notas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lbltec = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         CBGRAD = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
+        comboPeriodo = new javax.swing.JComboBox();
         btnConsultarAsignaturas = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         comboAsignaturas = new javax.swing.JComboBox();
         jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        lblDocente = new javax.swing.JLabel();
+        lblAsignatura1 = new javax.swing.JLabel();
+        lblDoc = new javax.swing.JLabel();
+        lblAsignatura = new javax.swing.JLabel();
+        lblPeriodo = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel4 = new javax.swing.JPanel();
+        canvas1 = new java.awt.Canvas();
+        jPanel5 = new javax.swing.JPanel();
+        lblGrado2 = new javax.swing.JLabel();
+        lblGrado = new javax.swing.JLabel();
+        lbltec1 = new javax.swing.JLabel();
+        lbltec2 = new javax.swing.JLabel();
+        lbltec3 = new javax.swing.JLabel();
+        lbltec4 = new javax.swing.JLabel();
+        lbltec5 = new javax.swing.JLabel();
+        lbltec6 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        lblGrado3 = new javax.swing.JLabel();
+        lblGrado1 = new javax.swing.JLabel();
+        lbltec7 = new javax.swing.JLabel();
+        lbltec8 = new javax.swing.JLabel();
+        lbltec9 = new javax.swing.JLabel();
+        lbltec10 = new javax.swing.JLabel();
+        lbltec12 = new javax.swing.JLabel();
+        lbltec13 = new javax.swing.JLabel();
+        lbltec14 = new javax.swing.JLabel();
+        lbltec15 = new javax.swing.JLabel();
+        lbltec16 = new javax.swing.JLabel();
+        lbltec17 = new javax.swing.JLabel();
+        lbltec18 = new javax.swing.JLabel();
+        lbltec19 = new javax.swing.JLabel();
+
+        lbltec.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbltec.setForeground(new java.awt.Color(255, 255, 255));
+        lbltec.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec.setOpaque(true);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("COLEGIO AMERICANO MENNO");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -88,9 +128,9 @@ public class Notas extends javax.swing.JFrame {
         jLabel3.setText("PERIODO:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 70, 30));
 
-        jComboBox2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PRIMERO", "SEGUNDO", "TERRCERO", "CUARTO" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 110, 30));
+        comboPeriodo.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        comboPeriodo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PRIMERO", "SEGUNDO", "TERRCERO", "CUARTO" }));
+        jPanel1.add(comboPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 110, 30));
 
         btnConsultarAsignaturas.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnConsultarAsignaturas.setText("CONSULTAR ASIGNATURAS");
@@ -120,7 +160,228 @@ public class Notas extends javax.swing.JFrame {
 
         jButton2.setText("jButton2");
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 600, 90, 30));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblDocente.setBackground(new java.awt.Color(255, 255, 255));
+        lblDocente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblDocente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel3.add(lblDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 230, 40));
+
+        lblAsignatura1.setBackground(new java.awt.Color(255, 255, 255));
+        lblAsignatura1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblAsignatura1.setForeground(new java.awt.Color(194, 6, 6));
+        lblAsignatura1.setText("Asignatura:");
+        jPanel3.add(lblAsignatura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 90, 40));
+
+        lblDoc.setBackground(new java.awt.Color(255, 255, 255));
+        lblDoc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblDoc.setForeground(new java.awt.Color(194, 6, 6));
+        lblDoc.setText("Docente:");
+        jPanel3.add(lblDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 70, 40));
+
+        lblAsignatura.setBackground(new java.awt.Color(255, 255, 255));
+        lblAsignatura.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblAsignatura.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel3.add(lblAsignatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 220, 40));
+
+        lblPeriodo.setBackground(new java.awt.Color(153, 153, 255));
+        lblPeriodo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblPeriodo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPeriodo.setOpaque(true);
+        jPanel3.add(lblPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 400, 40));
+
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1050, 40));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.add(canvas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(524, 5, -1, -1));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setInheritsPopupMenu(true);
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblGrado2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblGrado2.setForeground(new java.awt.Color(192, 0, 0));
+        lblGrado2.setText("Grado:");
+        jPanel5.add(lblGrado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 50));
+
+        lblGrado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblGrado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblGrado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.add(lblGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 260, 50));
+
+        lbltec1.setBackground(new java.awt.Color(255, 0, 0));
+        lbltec1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbltec1.setForeground(new java.awt.Color(255, 255, 255));
+        lbltec1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec1.setText("T. INF 20%");
+        lbltec1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec1.setOpaque(true);
+        jPanel5.add(lbltec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 90, 50));
+
+        lbltec2.setBackground(new java.awt.Color(255, 0, 255));
+        lbltec2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbltec2.setForeground(new java.awt.Color(255, 255, 255));
+        lbltec2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec2.setText("TEC SEMIFORMALES 45%");
+        lbltec2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec2.setOpaque(true);
+        jPanel5.add(lbltec2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 405, 50));
+
+        lbltec3.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbltec3.setForeground(new java.awt.Color(255, 255, 255));
+        lbltec3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec3.setOpaque(true);
+        jPanel5.add(lbltec3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, 175, 50));
+
+        lbltec4.setBackground(new java.awt.Color(255, 0, 255));
+        lbltec4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbltec4.setForeground(new java.awt.Color(255, 255, 255));
+        lbltec4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec4.setText("TEC FORMALES 35%");
+        lbltec4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec4.setOpaque(true);
+        jPanel5.add(lbltec4, new org.netbeans.lib.awtextra.AbsoluteConstraints(845, 0, 135, 50));
+
+        lbltec5.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbltec5.setForeground(new java.awt.Color(255, 255, 255));
+        lbltec5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec5.setOpaque(true);
+        jPanel5.add(lbltec5, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 0, 135, 50));
+
+        lbltec6.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbltec6.setForeground(new java.awt.Color(255, 255, 255));
+        lbltec6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec6.setOpaque(true);
+        jPanel5.add(lbltec6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1115, 0, 55, 50));
+
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 50));
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setInheritsPopupMenu(true);
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblGrado3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblGrado3.setForeground(new java.awt.Color(192, 0, 0));
+        lblGrado3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.add(lblGrado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 50));
+
+        lblGrado1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblGrado1.setForeground(new java.awt.Color(153, 51, 0));
+        lblGrado1.setText("  ESTUDIANTE");
+        lblGrado1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.add(lblGrado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 310, 50));
+
+        lbltec7.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbltec7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec7.setText("CO-EV");
+        lbltec7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec7.setOpaque(true);
+        jPanel6.add(lbltec7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 90, 50));
+
+        lbltec8.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbltec8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec8.setText("EXTRACLASE");
+        lbltec8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec8.setOpaque(true);
+        jPanel6.add(lbltec8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 135, 50));
+
+        lbltec9.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbltec9.setForeground(new java.awt.Color(255, 255, 255));
+        lbltec9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec9.setOpaque(true);
+        jPanel6.add(lbltec9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, 170, 50));
+
+        lbltec10.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec10.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lbltec10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec10.setText("EVAL2");
+        lbltec10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec10.setOpaque(true);
+        jPanel6.add(lbltec10, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 0, 45, 50));
+
+        lbltec12.setBackground(new java.awt.Color(255, 0, 255));
+        lbltec12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbltec12.setForeground(new java.awt.Color(255, 255, 255));
+        lbltec12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec12.setText("FASE");
+        lbltec12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec12.setOpaque(true);
+        jPanel6.add(lbltec12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1115, 0, 55, 50));
+
+        lbltec13.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbltec13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec13.setText("CLASE");
+        lbltec13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec13.setOpaque(true);
+        jPanel6.add(lbltec13, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 0, 135, 50));
+
+        lbltec14.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lbltec14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec14.setText("SUSTENTACIÓN");
+        lbltec14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec14.setOpaque(true);
+        jPanel6.add(lbltec14, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, 135, 50));
+
+        lbltec15.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec15.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lbltec15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec15.setText("EVAL1");
+        lbltec15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec15.setOpaque(true);
+        jPanel6.add(lbltec15, new org.netbeans.lib.awtextra.AbsoluteConstraints(845, 0, 45, 50));
+
+        lbltec16.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec16.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lbltec16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec16.setText("EVAL3");
+        lbltec16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec16.setOpaque(true);
+        jPanel6.add(lbltec16, new org.netbeans.lib.awtextra.AbsoluteConstraints(935, 0, 45, 50));
+
+        lbltec17.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec17.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lbltec17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec17.setText("FALLAS");
+        lbltec17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec17.setOpaque(true);
+        jPanel6.add(lbltec17, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 0, 45, 50));
+
+        lbltec18.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbltec18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec18.setText("NIV");
+        lbltec18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec18.setOpaque(true);
+        jPanel6.add(lbltec18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1025, 0, 45, 50));
+
+        lbltec19.setBackground(new java.awt.Color(255, 255, 255));
+        lbltec19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lbltec19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltec19.setText("REC");
+        lbltec19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbltec19.setOpaque(true);
+        jPanel6.add(lbltec19, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 0, 45, 50));
+
+        jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1090, -1));
+
+        jScrollPane1.setViewportView(jPanel4);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 1050, 430));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 650));
 
@@ -177,7 +438,9 @@ public class Notas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void comboAsignaturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboAsignaturasActionPerformed
-        // TODO add your handling code here:
+        
+        lblAsignatura.setText(comboAsignaturas.getSelectedItem().toString());
+        lblPeriodo.setText("PERIODO "+comboPeriodo.getSelectedItem().toString());
     }//GEN-LAST:event_comboAsignaturasActionPerformed
 
     private void CBGRADActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBGRADActionPerformed
@@ -223,14 +486,47 @@ public class Notas extends javax.swing.JFrame {
     private javax.swing.JComboBox CBGRAD;
     private javax.swing.JButton btnConsultarAsignaturas;
     private javax.swing.JButton btnSalir;
+    private java.awt.Canvas canvas1;
     private javax.swing.JComboBox comboAsignaturas;
+    private javax.swing.JComboBox comboPeriodo;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAsignatura;
+    private javax.swing.JLabel lblAsignatura1;
+    private javax.swing.JLabel lblDoc;
+    private javax.swing.JLabel lblDocente;
+    private javax.swing.JLabel lblGrado;
+    private javax.swing.JLabel lblGrado1;
+    private javax.swing.JLabel lblGrado2;
+    private javax.swing.JLabel lblGrado3;
+    private javax.swing.JLabel lblPeriodo;
+    private javax.swing.JLabel lbltec;
+    private javax.swing.JLabel lbltec1;
+    private javax.swing.JLabel lbltec10;
+    private javax.swing.JLabel lbltec12;
+    private javax.swing.JLabel lbltec13;
+    private javax.swing.JLabel lbltec14;
+    private javax.swing.JLabel lbltec15;
+    private javax.swing.JLabel lbltec16;
+    private javax.swing.JLabel lbltec17;
+    private javax.swing.JLabel lbltec18;
+    private javax.swing.JLabel lbltec19;
+    private javax.swing.JLabel lbltec2;
+    private javax.swing.JLabel lbltec3;
+    private javax.swing.JLabel lbltec4;
+    private javax.swing.JLabel lbltec5;
+    private javax.swing.JLabel lbltec6;
+    private javax.swing.JLabel lbltec7;
+    private javax.swing.JLabel lbltec8;
+    private javax.swing.JLabel lbltec9;
     // End of variables declaration//GEN-END:variables
 }
