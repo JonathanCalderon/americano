@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportdoc" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3900548c-3d8c-4c0e-a4b4-722ad3c090a3">
+	<property name="template.type" value="columnar"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[select * from docentes ORDER BY docentes.`Apellidos`]]>
+	</queryString>
+	<field name="Nombre_Docente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Documento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EMail" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Curso" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Foto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/15)]]></groupExpression>
+		<groupHeader>
+			<band height="35">
+				<staticText>
+					<reportElement style="SubTitle" x="186" y="0" width="160" height="29" forecolor="#000000" uuid="c6c9504c-9953-458b-8f59-ecfbd52fca61"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reporte Docentes]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="157" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="137" y="4" width="403" height="29" uuid="99c9c3f1-afa1-41d9-aafd-500465cb6b9c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLEGIO AMERICANO MENNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="33" width="403" height="27" uuid="f4d3228d-6420-4355-9c9e-c07db8a87ed3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LA MESA CUNDINAMARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="60" width="403" height="26" uuid="5b8f2054-d6bf-410d-b066-981e2eb328ea"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PREESCOLAR, BÁSICA Y MEDIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="86" width="403" height="15" uuid="251e2285-226a-4f7b-be69-931d3eab4b77"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[Cll. 6 N° 21 - 69 - Telefax. 0918472710 - Cel. 3123862809]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="101" width="403" height="18" uuid="5cf2b120-6890-4a12-bdad-274b4b67dc62"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[camcol@hotmail.com - www.camcol.edu.co]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="119" width="403" height="14" uuid="12272d63-07fc-4099-935e-d3ca2c47f107"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[R/SEC Acta 247 - Folio 125 - C/D 325386000308]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="86" width="118" height="15" uuid="9bedb1ad-ece6-425e-b555-b89cf3c03433"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[APROBACIÓN OFICIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="101" width="118" height="18" uuid="b4990dad-b6da-46d9-897f-20c4da922be2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[RESOLUCIÓN N° 006156]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="119" width="118" height="14" uuid="3567b08f-f2e7-4f18-b756-99646421eae7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Noviembre 29 de 2002]]></text>
+			</staticText>
+			<image>
+				<reportElement x="23" y="0" width="97" height="87" uuid="19ad0296-6883-4672-9f8f-489c34b15f7a"/>
+				<imageExpression><![CDATA["C:/Workspace/Americano/CAM/src/Imagenes/LOGO CAM IMAGEN_1.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="166" splitType="Stretch">
+			<staticText>
+				<reportElement x="184" y="49" width="100" height="20" uuid="3748b076-29c5-47fe-8ae9-be84cdee1dc7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Documento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="284" y="49" width="231" height="20" uuid="e9ee09cf-b261-4ea9-9067-3f4a7e15ed1a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Documento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="184" y="89" width="100" height="20" uuid="caa760bc-5ddb-4d41-a58a-4d7187863178"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-Mail:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="284" y="89" width="231" height="20" uuid="a1a5f147-0ca5-4fd1-bbc1-f87a02a1b865"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EMail}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="184" y="109" width="100" height="20" uuid="af82ff51-37e0-422d-8a2c-faf595932ddc"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección Grado:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="284" y="109" width="231" height="20" uuid="cae90812-9a16-4906-8eb7-0a8b82c5dffd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Curso}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="184" y="29" width="100" height="20" uuid="95b6b571-b067-46b1-a8e0-dd081c27e3d3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="284" y="29" width="231" height="20" uuid="e675fa75-6de1-40fd-aa97-85bdcd91abd6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Apellidos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="184" y="9" width="100" height="20" uuid="74bea7c6-8d4f-484e-a452-10db5e86f35a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="284" y="9" width="231" height="20" uuid="1eaad75a-7a22-4b42-87a7-a2b2950489e8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre_Docente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="184" y="69" width="100" height="20" uuid="eb9da705-ac9a-4d16-8987-647a048fb36c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="284" y="69" width="231" height="20" uuid="bf8bc623-e310-4758-bdd6-687afa0655c5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Telefono}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="140" width="572" height="1" uuid="ba1fbdca-d13c-46f5-9a1c-52732b48d2f4"/>
+			</line>
+			<image>
+				<reportElement x="34" y="9" width="118" height="120" uuid="6b042ad3-618c-41f6-8c97-6349c3cc57e9"/>
+				<imageExpression><![CDATA[$F{Foto}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="13" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#003399" uuid="6efab2ae-9762-4bfb-8b34-581ee9c2d066"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="-1" width="40" height="13" forecolor="#FFFFFF" uuid="08db9f03-2469-4859-9f7b-716ad6983e9f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="-1" width="80" height="13" forecolor="#FFFFFF" uuid="aac48574-f988-43a3-ae7a-a65286a67e40"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Pág "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="0" width="197" height="13" forecolor="#FFFFFF" uuid="7b35bc7b-be31-4a13-8441-edb847003c8b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

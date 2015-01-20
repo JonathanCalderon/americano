@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportcerti" language="groovy" pageWidth="612" pageHeight="936" columnWidth="529" leftMargin="42" rightMargin="41" topMargin="42" bottomMargin="42" uuid="e37d44a9-eb6b-4f46-a56e-9c2e352d2af8">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="docdoc" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="curso" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nombre" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     estudiantes.`Grad` AS estudiantes_Grad,
+     estudiantes.`Nomestu` AS estudiantes_Nomestu,
+     estudiantes.`Apellid` AS estudiantes_Apellid,
+     estudiantes.`Tipodoc` AS estudiantes_Tipodoc,
+     estudiantes.`Documentoid` AS estudiantes_Documentoid,
+     estudiantes.`De` AS estudiantes_De,
+     asignaturas.`Codigo` AS asignaturas_Codigo,
+     asignaturas.`Asignatura` AS asignaturas_Asignatura,
+     asignaturas.`Grado` AS asignaturas_Grado,
+     asignaturas.`Intensidad_Horaria` AS asignaturas_Intensidad_Horaria
+FROM
+     `estudiantes` estudiantes,
+     `asignaturas` asignaturas
+WHERE
+     estudiantes.`Documentoid` = $P{docdoc} AND asignaturas.`Grado` = $P{curso}]]>
+	</queryString>
+	<field name="estudiantes_Grad" class="java.lang.String"/>
+	<field name="estudiantes_Nomestu" class="java.lang.String"/>
+	<field name="estudiantes_Apellid" class="java.lang.String"/>
+	<field name="estudiantes_Tipodoc" class="java.lang.String"/>
+	<field name="estudiantes_Documentoid" class="java.lang.String"/>
+	<field name="estudiantes_De" class="java.lang.String"/>
+	<field name="asignaturas_Codigo" class="java.lang.String"/>
+	<field name="asignaturas_Asignatura" class="java.lang.String"/>
+	<field name="asignaturas_Grado" class="java.lang.String"/>
+	<field name="asignaturas_Intensidad_Horaria" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="117" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="85" width="122" height="15" uuid="b4990dad-b6da-46d9-897f-20c4da922be2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[RESOLUCIÓN N° 006156]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="70" width="368" height="15" uuid="cec5f196-072f-4325-8d21-1e8537d3ac92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cll. 6 N° 21 - 69 - Telefax. 0918472710 - Cel. 3123862809]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="26" width="368" height="24" uuid="8d6a7587-3327-4b91-bad4-6064d8c9fea0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LA MESA CUNDINAMARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="70" width="122" height="15" uuid="9bedb1ad-ece6-425e-b555-b89cf3c03433"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APROBACIÓN OFICIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="100" width="122" height="15" uuid="3567b08f-f2e7-4f18-b756-99646421eae7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Noviembre 29 de 2002]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="1" width="368" height="25" uuid="f69d7822-b959-4533-b7ed-fe22a0ebaba5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLEGIO AMERICANO MENNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="100" width="368" height="15" uuid="5152cce1-8971-49b4-b4b7-21a41b60bfaf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[R/SEC Acta 247 - Folio 125 - C/D 325386000308]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="85" width="368" height="15" uuid="28d7d358-cbf6-47fc-8e36-688ca5f461e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[camcol@hotmail.com - www.camcol.edu.co]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="50" width="368" height="20" uuid="1e0da06c-56d1-48d8-9b35-d96909e77b39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PREESCOLAR, BÁSICA Y MEDIA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="40" y="1" width="73" height="69" uuid="a65d4345-da72-4140-881e-92ac4d140499"/>
+				<imageExpression><![CDATA["C:/Workspace/Americano/CAM/src/Imagenes/LOGO CAM IMAGEN_1.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="529" height="70" uuid="8bfaf414-b1ef-4d3a-87a2-66178185072f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[EL SUCRITO RECTOR DEL COLEGIO AMERICANO MENNO DE LA MESA CUNDINAMARCA,
+PLANTEL APROBADO OFICIALMENTE PARA LOS NIVELES DE EDUCACIÓN PREESCOLAR,
+EDUCACIÓN  BÁSICA  Y  EDUCACIÓN  MEDIA  ACADÉMICA POR  RESOLUCIÓN N° 006156,
+DE  NOVIEMBRE  29  DE  2002,  EMANADA  DE  LA  SECRETARÍA  DE  EDUCACIÓN  DE
+CUNDINAMARCA, CÓDIGO DANE 325386000308,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="80" width="193" height="31" uuid="4f69946f-04a0-425d-bf5d-3affe2081c73"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C E R T I F I C A N]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="540" height="71" uuid="4a146c41-bcad-4590-8b9e-086fbd0dd962"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Que                                                                                                   identificado con                              N°
+                         , cursó y aprobó satisfactoriamente en este plantel los estudios correspondientes al GRADO
+                          de educación básica secundaria durante el año                  ,  de acuerdo con lo lineamientos
+generales de la ley 115 de 1994, Decreto 1860 de 1994 y Resolución  2343 de 1996 respectivamente, con los
+siguientes resultados definitivos en las áreas y procesos desarrollados:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="414" y="0" width="91" height="20" uuid="960519e6-a49f-4295-bafd-60edc0fb883d"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiantes_Tipodoc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="10" width="79" height="20" uuid="ea16be5c-599d-416d-9572-020a0fa14226"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiantes_Documentoid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="79" height="20" uuid="d0f6a1c4-884b-4fed-abb9-c6d82726179c"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiantes_Grad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="81" width="151" height="20" uuid="16fe9714-e365-4951-a246-76e5b4cf712a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ÁREAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="81" width="37" height="20" uuid="07d1670c-3bd5-4345-a276-854c1d5177e7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[I. H. S]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="15" y="0" width="311" height="20" uuid="5bc286e1-1fe3-4bb5-9017-972b350f5184"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="151" height="20" uuid="c504aa27-9694-4944-ace4-06b477c0303c"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph firstLineIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{asignaturas_Asignatura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="0" width="37" height="20" uuid="790e9e12-c0e8-4876-8e85-84147c4eb998"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{asignaturas_Intensidad_Horaria}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="40" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="186" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="140" width="229" height="46" uuid="95898761-1f92-43a9-aa0b-6244db8710f7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GUILLERMO VARGAS RINCÓN
+C.C 186.710 de Anolaima
+Rector]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="140" width="214" height="46" uuid="ec859173-5177-4273-9385-dae97b369780"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VIVIANA ECHEVERRI SÁNCHEZ
+C.C 20.688.580 de La Mesa
+Secretaria Académica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="32" width="529" height="44" uuid="0a7105ee-3285-46cf-b1f1-095e4c88bd32"/>
+				<text><![CDATA[Se expide el presente certificado en La Mesa Cundinamarca, a los]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

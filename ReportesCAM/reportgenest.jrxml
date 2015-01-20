@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportest" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="615737d6-b37b-4b95-80e6-cde7000baaf1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<queryString>
+		<![CDATA[SELECT
+     estudiantes.`Grad` AS estudiantes_Grad,
+     estudiantes.`Nomestu` AS estudiantes_Nomestu,
+     estudiantes.`Apellid` AS estudiantes_Apellid,
+     estudiantes.`Tipodoc` AS estudiantes_Tipodoc,
+     estudiantes.`Documentoid` AS estudiantes_Documentoid,
+     estudiantes.`De` AS estudiantes_De,
+     estudiantes.`Nacimiento` AS estudiantes_Nacimiento,
+     estudiantes.`Direcci` AS estudiantes_Direcci,
+     estudiantes.`Nombrepadre` AS estudiantes_Nombrepadre,
+     estudiantes.`Telpadre` AS estudiantes_Telpadre,
+     estudiantes.`Nombremadre` AS estudiantes_Nombremadre,
+     estudiantes.`Telmadre` AS estudiantes_Telmadre,
+     estudiantes.`Nombreacu` AS estudiantes_Nombreacu,
+     estudiantes.`Telacu` AS estudiantes_Telacu,
+     estudiantes.`Obsemed` AS estudiantes_Obsemed,
+     estudiantes.`Eps` AS estudiantes_Eps,
+     estudiantes.`Rh` AS estudiantes_Rh,
+     estudiantes.`Obssegen` AS estudiantes_Obssegen,
+     estudiantes.`Fotogra` AS estudiantes_Fotogra
+FROM
+     `estudiantes` estudiantes]]>
+	</queryString>
+	<field name="estudiantes_Grad" class="java.lang.String"/>
+	<field name="estudiantes_Nomestu" class="java.lang.String"/>
+	<field name="estudiantes_Apellid" class="java.lang.String"/>
+	<field name="estudiantes_Tipodoc" class="java.lang.String"/>
+	<field name="estudiantes_Documentoid" class="java.lang.String"/>
+	<field name="estudiantes_De" class="java.lang.String"/>
+	<field name="estudiantes_Nacimiento" class="java.lang.String"/>
+	<field name="estudiantes_Direcci" class="java.lang.String"/>
+	<field name="estudiantes_Nombrepadre" class="java.lang.String"/>
+	<field name="estudiantes_Telpadre" class="java.lang.String"/>
+	<field name="estudiantes_Nombremadre" class="java.lang.String"/>
+	<field name="estudiantes_Telmadre" class="java.lang.String"/>
+	<field name="estudiantes_Nombreacu" class="java.lang.String"/>
+	<field name="estudiantes_Telacu" class="java.lang.String"/>
+	<field name="estudiantes_Obsemed" class="java.lang.String"/>
+	<field name="estudiantes_Eps" class="java.lang.String"/>
+	<field name="estudiantes_Rh" class="java.lang.String"/>
+	<field name="estudiantes_Obssegen" class="java.lang.String"/>
+	<field name="estudiantes_Fotogra" class="java.lang.String"/>
+	<variable name="estudiantes_Nomestu_1" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{estudiantes_Nomestu}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="2" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="177" splitType="Stretch">
+			<staticText>
+				<reportElement x="179" y="144" width="256" height="28" uuid="8915c19f-83a4-4b6f-be4c-ab6e9e6757ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FICHA DE ESTUDIANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="114" width="368" height="15" uuid="5152cce1-8971-49b4-b4b7-21a41b60bfaf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[R/SEC Acta 247 - Folio 125 - C/D 325386000308]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="99" width="118" height="15" uuid="b4990dad-b6da-46d9-897f-20c4da922be2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[RESOLUCIÓN N° 006156]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="15" width="368" height="25" uuid="f69d7822-b959-4533-b7ed-fe22a0ebaba5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLEGIO AMERICANO MENNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="64" width="368" height="20" uuid="1e0da06c-56d1-48d8-9b35-d96909e77b39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PREESCOLAR, BÁSICA Y MEDIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="99" width="368" height="15" uuid="28d7d358-cbf6-47fc-8e36-688ca5f461e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[camcol@hotmail.com - www.camcol.edu.co]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="84" width="118" height="15" uuid="9bedb1ad-ece6-425e-b555-b89cf3c03433"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APROBACIÓN OFICIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="114" width="118" height="12" uuid="3567b08f-f2e7-4f18-b756-99646421eae7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Noviembre 29 de 2002]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="40" width="368" height="24" uuid="8d6a7587-3327-4b91-bad4-6064d8c9fea0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LA MESA CUNDINAMARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="84" width="368" height="15" uuid="cec5f196-072f-4325-8d21-1e8537d3ac92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cll. 6 N° 21 - 69 - Telefax. 0918472710 - Cel. 3123862809]]></text>
+			</staticText>
+			<image>
+				<reportElement x="69" y="16" width="71" height="68" uuid="8d18bbd7-42d1-4d24-80b7-b4843eaa5781"/>
+				<imageExpression><![CDATA["C:/Workspace/Americano/CAM/src/Imagenes/LOGO CAM IMAGEN_1.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="398">
+			<textField>
+				<reportElement x="148" y="202" width="222" height="20" uuid="2058e6c5-4901-44ba-a8b3-bf1c6cfc6d11"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Nombrepadre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="202" width="125" height="20" uuid="4bd915fe-64d5-46af-b3b9-1603f8aad8c1"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DEL PADRE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="435" y="202" width="99" height="20" uuid="d6364bb3-c009-4a9b-ab7d-65bdba6fcce6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Telpadre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="202" width="65" height="20" uuid="24703018-9cee-4ee0-9da2-1221da0219aa"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELÉFONO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="147" y="235" width="223" height="20" uuid="36d6796c-e0b4-4048-b92c-e11670c7bc31"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Nombremadre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="235" width="125" height="20" uuid="5e5ca5f8-f5b5-4d30-9c3a-e0c52c7fbf35"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DE LA MADRE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="435" y="235" width="99" height="20" uuid="39aba6d5-cbb6-45b3-a861-f13321ba34b8"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Telmadre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="235" width="65" height="20" uuid="87c42ef3-e1d0-405c-b44d-9a4d379437cb"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELÉFONO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="147" y="272" width="223" height="20" uuid="092e8c96-7848-4d6a-af92-227e61388ca6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Nombreacu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="272" width="125" height="20" uuid="220ed376-409b-4918-9837-7c201ea43e56"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACUDIENTE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="435" y="272" width="100" height="20" uuid="6626c6a0-74d0-4bc7-8e9b-c4873952d11b"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Telacu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="272" width="65" height="20" uuid="ee36c660-c18c-4ded-810d-c388d54d8192"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELÉFONO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="308" width="372" height="20" uuid="10a2bc30-bc69-40f5-8e67-23f1a1e7e7c4"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Obsemed}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="308" width="140" height="20" uuid="0a936d68-c8eb-4fae-8bad-56469a83b715"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSEVACIONES MÉDICAS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="342" width="216" height="20" uuid="c8baed26-0821-48b4-9b3a-fbce317b10d7"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Eps}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="342" width="41" height="20" uuid="4f428411-7d66-43d5-ba89-f0a3ccc042b0"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[EPS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="493" y="342" width="42" height="20" uuid="bf431332-5977-48d4-8a30-0240db245335"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Rh}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="307" y="342" width="186" height="20" uuid="4adcfdb1-1c97-401e-bbd1-91e98b167e4d"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRUPO SANGUINEO Y FACTOR RH: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="194" y="375" width="338" height="20" uuid="486b0824-ef3c-4aa8-9088-551d62525e29"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Obssegen}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="375" width="172" height="20" uuid="7f90f5ca-9997-4237-8a64-f1f4ed0854bb"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES GENERALES:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="279" y="12" width="175" height="20" uuid="b8a2b77d-7b82-4d2b-8a55-b7fcd2c88abc"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Grad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="12" width="79" height="20" uuid="d0c0074d-03b3-459b-aa91-1162b61527d2"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRADO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="279" y="42" width="175" height="20" uuid="fa8feb10-66b6-430d-bf34-2827f31cbce8"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Nomestu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="42" width="79" height="20" uuid="6f7a4785-83e7-4adb-8099-31417a86ba15"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="279" y="72" width="175" height="20" uuid="cba0bbb9-d468-4945-bd48-a6fed8f23a91"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Apellid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="102" width="117" height="20" uuid="075fc645-366b-4752-84e2-829b84195cc6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiantes_Tipodoc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="102" width="100" height="20" uuid="9a01c3e4-d919-4ff5-87c4-33bd324d0d8f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_De}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="429" y="102" width="29" height="20" uuid="8ff346c5-81fc-4760-b937-4bacee69a9dd"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[De:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="328" y="134" width="166" height="20" uuid="d87937af-7ee5-46ec-add5-d7278c6affca"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Nacimiento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="134" width="128" height="20" uuid="f970bfe2-a1e5-46c8-96c2-d9add88e9b8c"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE NACIMIENTO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="269" y="169" width="225" height="20" uuid="e18bbede-6f89-434f-8176-4b7124d19625"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Direcci}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="169" width="69" height="20" uuid="1a6d8680-0f2f-4333-98df-d5189e3d0cc8"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="72" width="79" height="20" uuid="268fa98b-2955-4408-a9b6-280662f7c0c7"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="27" y="12" width="145" height="177" uuid="870170d3-46a7-46f1-a17e-c192ba322c61"/>
+				<imageExpression><![CDATA[$F{estudiantes_Fotogra}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="317" y="102" width="112" height="20" uuid="8bff1e6b-6859-4d9f-8959-e2869da16a90"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_Documentoid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

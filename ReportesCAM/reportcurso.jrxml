@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportcurso" language="groovy" pageWidth="612" pageHeight="936" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0fdd93fa-e568-41fa-a185-8e904ef6294a">
+	<property name="ireport.zoom" value="1.2100000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#0000FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#0000FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="docdoc" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     estudiantes.`Grad` AS estudiantes_Grad,
+     estudiantes.`Nomestu` AS estudiantes_Nomestu,
+     estudiantes.`Apellid` AS estudiantes_Apellid
+FROM
+     `estudiantes` estudiantes
+WHERE estudiantes.`Grad`= $P{docdoc}
+ORDER BY estudiantes.`Apellid`]]>
+	</queryString>
+	<field name="estudiantes_Grad" class="java.lang.String"/>
+	<field name="estudiantes_Nomestu" class="java.lang.String"/>
+	<field name="estudiantes_Apellid" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="125" splitType="Stretch">
+			<image>
+				<reportElement x="67" y="7" width="78" height="69" uuid="a65d4345-da72-4140-881e-92ac4d140499"/>
+				<imageExpression><![CDATA["C:/Workspace/Americano/CAM/src/Imagenes/LOGO CAM IMAGEN_1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="40" y="106" width="122" height="15" uuid="3567b08f-f2e7-4f18-b756-99646421eae7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Noviembre 29 de 2002]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="76" width="368" height="15" uuid="cec5f196-072f-4325-8d21-1e8537d3ac92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cll. 6 N° 21 - 69 - Telefax. 0918472710 - Cel. 3123862809]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="32" width="368" height="24" uuid="8d6a7587-3327-4b91-bad4-6064d8c9fea0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LA MESA CUNDINAMARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="91" width="368" height="15" uuid="28d7d358-cbf6-47fc-8e36-688ca5f461e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[camcol@hotmail.com - www.camcol.edu.co]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="56" width="368" height="20" uuid="1e0da06c-56d1-48d8-9b35-d96909e77b39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PREESCOLAR, BÁSICA Y MEDIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="106" width="368" height="15" uuid="5152cce1-8971-49b4-b4b7-21a41b60bfaf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[R/SEC Acta 247 - Folio 125 - C/D 325386000308]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="91" width="122" height="15" uuid="b4990dad-b6da-46d9-897f-20c4da922be2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[RESOLUCIÓN N° 006156]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="76" width="122" height="15" uuid="9bedb1ad-ece6-425e-b555-b89cf3c03433"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APROBACIÓN OFICIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="7" width="368" height="25" uuid="f69d7822-b959-4533-b7ed-fe22a0ebaba5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLEGIO AMERICANO MENNO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement style="table_TD" x="73" y="47" width="255" height="20" uuid="d869905e-c95d-472d-9dc5-148e1e50c910"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE ESTUDIANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TD" x="328" y="47" width="202" height="20" uuid="39e6790e-163d-45b5-8035-b3335ba6c5b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIONES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="9" width="135" height="38" uuid="e32e6e31-c44d-4617-be52-19675722e307"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRADO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="307" y="9" width="112" height="38" uuid="4defb474-2b6a-4115-9cc1-fca4b8faea78"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{docdoc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table_TD" x="40" y="47" width="33" height="20" uuid="bc3eef8c-ff03-4a6e-8ea5-a8eced6ac48c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement style="table_TD" x="328" y="0" width="202" height="14" uuid="bafd5d90-f430-44a3-9682-7e8a431a0d20"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table_TD" x="73" y="0" width="115" height="14" uuid="2da2e2e2-aba6-4c2e-ae52-17a74eb1b512"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+					<paragraph firstLineIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiantes_Apellid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table_TD" x="188" y="0" width="140" height="14" uuid="cab94f6f-6087-41af-a2f3-7545316bc0bb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+					<paragraph firstLineIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudiantes_Nomestu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table_TD" x="40" y="0" width="33" height="14" uuid="8556e4ae-9e5b-40bc-bd08-9493f83b3f0f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="75" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="40" y="37" width="211" height="14" uuid="5531248a-e010-45cd-ad20-449283604330"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="37" width="80" height="14" uuid="7df82c23-6f03-49e2-b819-6e512a7434ec"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pág "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="490" y="37" width="40" height="14" uuid="b37fa446-923a-4686-976b-163ff998087f"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

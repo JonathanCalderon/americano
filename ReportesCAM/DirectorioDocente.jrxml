@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DirectorioDocente" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="543189a5-fceb-45fb-8b15-0b0a3321389b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#00008B">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#0000FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="jhc" uuid="cbd99fd9-aad0-4f48-a288-b0cb36a23c9a">
+		<queryString>
+			<![CDATA[SELECT
+     docentes.`Nombre_Docente` AS docentes_Nombre_Docente,
+     docentes.`Apellidos` AS docentes_Apellidos,
+     docentes.`Telefono` AS docentes_Telefono,
+     docentes.`EMail` AS docentes_EMail
+FROM
+     `docentes` docentes
+ORDER BY docentes.`Apellidos`]]>
+		</queryString>
+		<field name="docentes_Nombre_Docente" class="java.lang.String"/>
+		<field name="docentes_Apellidos" class="java.lang.String"/>
+		<field name="docentes_Telefono" class="java.lang.String"/>
+		<field name="docentes_EMail" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT 1 AS DUMMY]]>
+	</queryString>
+	<field name="DUMMY" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="157" splitType="Stretch">
+			<image>
+				<reportElement x="45" y="10" width="95" height="87" uuid="19ad0296-6883-4672-9f8f-489c34b15f7a"/>
+				<imageExpression><![CDATA["C:/Workspace/Americano/CAM/src/Imagenes/LOGO CAM IMAGEN_1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="28" y="112" width="118" height="18" uuid="b4990dad-b6da-46d9-897f-20c4da922be2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[RESOLUCIÓN N° 006156]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="130" width="118" height="14" uuid="3567b08f-f2e7-4f18-b756-99646421eae7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Noviembre 29 de 2002]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="97" width="118" height="15" uuid="9bedb1ad-ece6-425e-b555-b89cf3c03433"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[APROBACIÓN OFICIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="10" width="368" height="25" uuid="f69d7822-b959-4533-b7ed-fe22a0ebaba5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLEGIO AMERICANO MENNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="35" width="368" height="24" uuid="8d6a7587-3327-4b91-bad4-6064d8c9fea0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LA MESA CUNDINAMARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="59" width="368" height="20" uuid="1e0da06c-56d1-48d8-9b35-d96909e77b39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PREESCOLAR, BÁSICA Y MEDIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="79" width="368" height="20" uuid="cec5f196-072f-4325-8d21-1e8537d3ac92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cll. 6 N° 21 - 69 - Telefax. 0918472710 - Cel. 3123862809]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="99" width="368" height="20" uuid="28d7d358-cbf6-47fc-8e36-688ca5f461e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[camcol@hotmail.com - www.camcol.edu.co]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="119" width="368" height="20" uuid="5152cce1-8971-49b4-b4b7-21a41b60bfaf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[R/SEC Acta 247 - Folio 125 - C/D 325386000308]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="146" y="11" width="271" height="35" uuid="6d9e3dc2-b775-4f01-aabb-f6606d6a16e4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECTORIO DE DOCENTES]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="150">
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="45" y="22" width="509" height="80" uuid="79b1d957-a3ee-45c1-95e6-b9adf0b2a5db"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="jhc" uuid="8cfb8a08-4db4-499c-ac3a-1926be6116cd">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="136" uuid="f3c7c846-38fd-4a8b-9f82-1c7d68f5761d">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="136" height="30" uuid="12ddb836-a09f-4066-b2ae-816d2006899c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Tahoma" size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Nombre]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="10" y="0" width="126" height="20" uuid="51c11b68-bd36-4b09-a034-246e404bfce9"/>
+								<textFieldExpression><![CDATA[$F{docentes_Nombre_Docente}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="134" uuid="e324bef4-1a0e-419a-9b1f-3af332876328">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="134" height="30" uuid="d57389db-c1ab-4c9d-95b6-4969fbdd6859"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Tahoma" size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Apellidos]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="123" height="20" uuid="72195866-a450-4c65-9cd8-789b25bed761"/>
+								<textFieldExpression><![CDATA[$F{docentes_Apellidos}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="95" uuid="3035ebd4-c40f-42f3-b40d-a3f4af6dfaef">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="95" height="30" uuid="775ab6a5-ba02-487d-96d3-1b40c98628ee"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Tahoma" size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Teléfono]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="84" height="20" uuid="cd535e58-0def-4f5e-8df8-ded51aab290f"/>
+								<textFieldExpression><![CDATA[$F{docentes_Telefono}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="142" uuid="953851a3-873f-4d22-88da-a5083a6f2b70">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="142" height="30" uuid="fffd6654-4cb9-4571-b2b6-ade2512813b1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Tahoma" size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[E - Mail]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="10" y="0" width="132" height="20" uuid="4064c123-8f23-40bf-84ea-9bfb5b706fa3"/>
+								<textFieldExpression><![CDATA[$F{docentes_EMail}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="28" y="0" width="173" height="20" uuid="f7c58fdb-e394-4e1c-b309-06cc3dbd0598"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="2" width="80" height="20" uuid="b323d328-547e-4201-9e9a-b69d07768d22"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA["Pág "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="523" y="2" width="40" height="20" uuid="5ef129c2-3267-4047-b205-b01c01e09918"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

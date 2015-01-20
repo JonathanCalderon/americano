@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportlogros" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c9dfff33-ef4b-4666-b7ae-592eab49f06e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#0000FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#0000FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="jhclogros" uuid="cb4d89d0-4f05-4210-a9ff-1193531f5078">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     logros.`Codigo_Asignatura` AS logros_Codigo_Asignatura,
+     logros.`Logro` AS logros_Logro,
+     logros.`Periodo` AS logros_Periodo
+FROM
+     `logros` logros]]>
+		</queryString>
+		<field name="logros_Codigo_Asignatura" class="java.lang.String"/>
+		<field name="logros_Logro" class="java.lang.String"/>
+		<field name="logros_Periodo" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT 1 AS DUMMY]]>
+	</queryString>
+	<field name="DUMMY" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="148" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="8" width="368" height="25" uuid="f69d7822-b959-4533-b7ed-fe22a0ebaba5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLEGIO AMERICANO MENNO]]></text>
+			</staticText>
+			<image>
+				<reportElement x="60" y="4" width="77" height="74" uuid="a65d4345-da72-4140-881e-92ac4d140499"/>
+				<imageExpression><![CDATA["C:/Workspace/Americano/CAM/src/Imagenes/LOGO CAM IMAGEN_1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="160" y="33" width="368" height="24" uuid="8d6a7587-3327-4b91-bad4-6064d8c9fea0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LA MESA CUNDINAMARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="92" width="118" height="15" uuid="b4990dad-b6da-46d9-897f-20c4da922be2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[RESOLUCIÓN N° 006156]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="107" width="118" height="12" uuid="3567b08f-f2e7-4f18-b756-99646421eae7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Noviembre 29 de 2002]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="107" width="368" height="15" uuid="5152cce1-8971-49b4-b4b7-21a41b60bfaf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9"/>
+				</textElement>
+				<text><![CDATA[R/SEC Acta 247 - Folio 125 - C/D 325386000308]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="77" width="368" height="15" uuid="cec5f196-072f-4325-8d21-1e8537d3ac92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cll. 6 N° 21 - 69 - Telefax. 0918472710 - Cel. 3123862809]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="57" width="368" height="20" uuid="1e0da06c-56d1-48d8-9b35-d96909e77b39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PREESCOLAR, BÁSICA Y MEDIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="77" width="118" height="15" uuid="9bedb1ad-ece6-425e-b555-b89cf3c03433"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APROBACIÓN OFICIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="92" width="368" height="15" uuid="28d7d358-cbf6-47fc-8e36-688ca5f461e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[camcol@hotmail.com - www.camcol.edu.co]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="0" width="266" height="37" uuid="6d55c50c-85cd-4a78-89b7-05ee727a09c1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE LOGROS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="205" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="38" y="17" width="490" height="80" uuid="ec4a4507-57f4-4357-a2a8-f25bb1cb790d"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="jhclogros" uuid="5417cba9-77ec-4493-9f9f-3a5fc8928d10">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="75" uuid="5303a3f1-ce18-4971-9c74-8752f9d3ce1c">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="75" height="30" uuid="f5a0eb77-67b3-4400-ae2e-679c7f0c3c68"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[ASIGNATURA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="25" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="75" height="25" uuid="f270c823-d45b-43f1-bce9-d4af9b1873e3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{logros_Codigo_Asignatura}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="323" uuid="55ac32d1-e678-437a-88d3-5a6f57c20508">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="323" height="30" uuid="8d75396f-4478-4e38-a46d-1ede1efdfe15"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[LOGRO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="25" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="312" height="25" uuid="42d415fa-e0b7-448d-8e34-03f96a206684"/>
+								<textElement verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{logros_Logro}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="bc0fc35c-0fb0-4f58-8115-1b74ebba7568">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="80c3d1f1-6771-4e1f-b67c-ee84ef3bea81"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[PERIODO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="25" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="25" uuid="37a70bd9-bbe1-422f-a07b-00b9c66a72f7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{logros_Periodo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="3" width="214" height="20" uuid="74f26140-5b95-47a2-b09e-e395411f0c22"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="454" y="3" width="80" height="20" uuid="5daa63a6-e418-474a-9a02-cef6f73e725a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Pág "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="534" y="3" width="40" height="20" uuid="87fbaf5e-3d83-46c7-83ba-f2fb0a0c61db"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
