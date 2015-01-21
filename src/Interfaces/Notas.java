@@ -80,7 +80,6 @@ public class Notas extends javax.swing.JFrame {
         btnConsultarAsignaturas = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         comboAsignaturas = new javax.swing.JComboBox();
-        jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         lblDocente = new javax.swing.JLabel();
         lblAsignatura1 = new javax.swing.JLabel();
@@ -194,9 +193,6 @@ public class Notas extends javax.swing.JFrame {
         });
         jPanel1.add(comboAsignaturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 160, 30));
 
-        jButton2.setText("jButton2");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 600, 90, 30));
-
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -238,8 +234,10 @@ public class Notas extends javax.swing.JFrame {
 
         lblGrado2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblGrado2.setForeground(new java.awt.Color(192, 0, 0));
+        lblGrado2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblGrado2.setText("Grado:");
-        panel1.add(lblGrado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 50));
+        lblGrado2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        panel1.add(lblGrado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 50));
 
         lblGrado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblGrado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -432,7 +430,7 @@ public class Notas extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(panelTabla);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 1050, 340));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 1050, 440));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 650));
         panelesEstudiantes = new ArrayList<JPanel>();
@@ -928,7 +926,8 @@ public class Notas extends javax.swing.JFrame {
                     @Override
                     public void itemStateChanged(ItemEvent e) {
 
-                        modificarBox("nivelo", e.getStateChange());
+                        String codEst = mapa.get((JCheckBox) e.getSource());
+                        modificarBox("nivelo", e.getStateChange(), codEst);
                     }
                 });
                 mapa.put(boxNivelo, docEst);
@@ -948,8 +947,8 @@ public class Notas extends javax.swing.JFrame {
 
                     @Override
                     public void itemStateChanged(ItemEvent e) {
-
-                        modificarBox("recupero", e.getStateChange());
+                        String codEst = mapa.get((JCheckBox) e.getSource());
+                        modificarBox("recupero", e.getStateChange(), codEst);
                     }
                 });
                 mapa.put(boxRecupero, docEst);
@@ -1115,7 +1114,6 @@ public class Notas extends javax.swing.JFrame {
     private javax.swing.JComboBox comboAsignaturas;
     private javax.swing.JComboBox comboGrado;
     private javax.swing.JComboBox comboPeriodo;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1224,18 +1222,96 @@ public class Notas extends javax.swing.JFrame {
             }
         } catch (Exception ex) {
             ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "En valor debe ser numérico", "Error",
+            JOptionPane.showMessageDialog(null, "El valor debe ser numérico", "Error",
                     JOptionPane.ERROR_MESSAGE);
             txt.setText("0.0");
         }
 
     }
 
-    private void modificarFallas(String docEst, String sValor, JTextField jTextField) {
+    private void modificarFallas(String docEst, String sValor, JTextField txt) {
+        try {
+            int valor = Integer.parseInt(sValor.trim());
+            if (valor < 0) {
+                JOptionPane.showMessageDialog(null, "En valor debe ser mayor a 0", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+                txt.setText("0");
+            } else {
+                System.out.println("lost " + docEst + "-" + valor);
+                Connection con = null;
+                Statement st = null;
+                try {
+
+                    Class.forName("com.mysql.jdbc.Driver");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3307/americano", "root", "admin");
+                    st = con.createStatement();
+                    String sql = "UPDATE notas set fallas=" + valor + " where (codigo_asignatura='"
+                            + codAsignaturaActual + "' AND grado='" + gradoActual + "') AND (periodo='" + periodoActual
+                            + "' AND documento_estudiante='" + docEst + "')";
+
+                    int resp = st.executeUpdate(sql);
+
+                    if (resp == 0) {
+                        Statement st2 = con.createStatement();
+                        String sql2 = "INSERT INTO notas (fallas,codigo_asignatura,grado,periodo,"
+                                + "documento_estudiante) values (" + valor + ",'" + codAsignaturaActual + "','" + gradoActual
+                                + "','" + periodoActual + "','" + docEst + "')";
+                        st2.execute(sql2);
+                    } else {
+                        System.out.println(resp);
+                        st.close();
+                        con.close();
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "El valor debe ser numérico", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            txt.setText("0");
+        }
 
     }
 
-    private void modificarBox(String nivelo, int stateChange) {
+    private void modificarBox(String campo, int stateChange, String docEst) {
+
         
+        Connection con = null;
+        Statement st = null;
+        try {
+            int valor = (stateChange==1)?1:0;
+            System.out.println("lost " + docEst + "-" + valor);
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/americano", "root", "admin");
+            st = con.createStatement();
+            String sql = "UPDATE notas set "+campo+"=" + valor + " where (codigo_asignatura='"
+                    + codAsignaturaActual + "' AND grado='" + gradoActual + "') AND (periodo='" + periodoActual
+                    + "' AND documento_estudiante='" + docEst + "')";
+
+            int resp = st.executeUpdate(sql);
+
+            if (resp == 0) {
+                Statement st2 = con.createStatement();
+                String sql2 = "INSERT INTO notas ("+campo+",codigo_asignatura,grado,periodo,"
+                        + "documento_estudiante) values (" + valor + ",'" + codAsignaturaActual + "','" + gradoActual
+                        + "','" + periodoActual + "','" + docEst + "')";
+                st2.execute(sql2);
+            } else {
+                System.out.println(resp);
+                st.close();
+                con.close();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
     }
+    
+    //TODO Calcular definitivas, cuando se marque un checkbox modificar cosas
 }
