@@ -22,6 +22,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,6 +49,7 @@ public class Notas extends javax.swing.JFrame {
 
     private ArrayList<JPanel> panelesEstudiantes;
     private Map<Component, String> mapa;
+    private Map<String,Component> mapaDefinitivas;
     private String periodoActual;
     private String gradoActual;
     private String codAsignaturaActual;
@@ -435,6 +437,8 @@ public class Notas extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 650));
         panelesEstudiantes = new ArrayList<JPanel>();
         mapa = new HashMap<Component, String>();
+        mapaDefinitivas = new HashMap<String, Component>
+        ();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -510,7 +514,9 @@ public class Notas extends javax.swing.JFrame {
 
                     fallas = rs2.getInt("fallas");
                     nivelo = (rs2.getInt("nivelo") > 0);
-                    recupero = (rs2.getInt("nivelo") > 0);
+                    System.out.println("nivelo "+nivelo);
+                    recupero = (rs2.getInt("recupero") > 0);
+                    System.out.println("recupero "+recupero);
                 } //No hay nostas registradas
                 else {
                     co_ev_1 = 0.0;
@@ -921,16 +927,18 @@ public class Notas extends javax.swing.JFrame {
                 panelAux1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
                 JCheckBox boxNivelo = new JCheckBox();
+                boxNivelo.setSelected(nivelo);
                 boxNivelo.addItemListener(new ItemListener() {
 
                     @Override
                     public void itemStateChanged(ItemEvent e) {
-
+                        System.out.println("item changed "+e.getStateChange());
                         String codEst = mapa.get((JCheckBox) e.getSource());
                         modificarBox("nivelo", e.getStateChange(), codEst);
                     }
                 });
                 mapa.put(boxNivelo, docEst);
+                
                 boxNivelo.setBackground(new java.awt.Color(255, 255, 255));
                 boxNivelo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 boxNivelo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -943,15 +951,18 @@ public class Notas extends javax.swing.JFrame {
                 panelAux2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
                 JCheckBox boxRecupero = new JCheckBox();
+                boxRecupero.setSelected(recupero);
                 boxRecupero.addItemListener(new ItemListener() {
 
                     @Override
                     public void itemStateChanged(ItemEvent e) {
+                        System.out.println("item changed "+e.getStateChange());
                         String codEst = mapa.get((JCheckBox) e.getSource());
                         modificarBox("recupero", e.getStateChange(), codEst);
                     }
                 });
                 mapa.put(boxRecupero, docEst);
+                
                 boxRecupero.setBackground(new java.awt.Color(255, 255, 255));
                 boxRecupero.setBorder(BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 boxRecupero.setHorizontalAlignment(SwingConstants.CENTER);
@@ -968,6 +979,7 @@ public class Notas extends javax.swing.JFrame {
                 lblFase.setText(fase.toString());
                 lblFase.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 lblFase.setOpaque(true);
+                mapaDefinitivas.put(docEst+"-fase", lblFase);
                 panelActual.add(lblFase, new org.netbeans.lib.awtextra.AbsoluteConstraints(1115, 0, 55, 50));
 
                 JLabel lblDef = new JLabel();
@@ -977,6 +989,7 @@ public class Notas extends javax.swing.JFrame {
                 lblDef.setText(definitiva.toString());
                 lblDef.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 lblDef.setOpaque(true);
+                mapaDefinitivas.put(docEst+"-definitiva", lblDef);
                 panelActual.add(lblDef, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, 55, 50));
 
                 JLabel lblSupero = new JLabel();
@@ -986,6 +999,7 @@ public class Notas extends javax.swing.JFrame {
                 lblSupero.setText(supero);
                 lblSupero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 lblSupero.setOpaque(true);
+                mapaDefinitivas.put(docEst+"-supero", lblSupero);
                 panelActual.add(lblSupero, new org.netbeans.lib.awtextra.AbsoluteConstraints(1225, 0, 55, 50));
 
                 JLabel lblDefLetra = new JLabel();
@@ -995,6 +1009,7 @@ public class Notas extends javax.swing.JFrame {
                 lblDefLetra.setText(definitiva_letra);
                 lblDefLetra.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                 lblDefLetra.setOpaque(true);
+                mapaDefinitivas.put(docEst+"-definitiva_letra", lblDefLetra);
                 panelActual.add(lblDefLetra, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 0, 55, 50));
 
                 panelesEstudiantes.add(panelActual);
@@ -1325,9 +1340,12 @@ public class Notas extends javax.swing.JFrame {
     //TODO Calcular definitivas, cuando se marque un checkbox modificar nota
     private void calcularDefinitiva(String docEst) {
 
+        System.out.println("calcular definitiva");
         Connection con = null;
         Statement st = null;
         try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/americano", "root", "admin");
             st = con.createStatement();
             String sql2 = "Select * from notas where ( codigo_asignatura='" + codAsignaturaActual + "' AND  "
                     + "grado='" + gradoActual + "' ) AND ( periodo='" + periodoActual
@@ -1361,13 +1379,14 @@ public class Notas extends javax.swing.JFrame {
 
                 fallas = rs2.getInt("fallas");
                 nivelo = (rs2.getInt("nivelo") > 0);
-                recupero = (rs2.getInt("nivelo") > 0);
+                recupero = (rs2.getInt("recupero") > 0);
 
                 Double fase = (co_ev_1 * 0.1) + (co_ev_2 * 0.1) + (((extraclase_1 + extraclase_2 + extraclase_3) / 3) * 0.15)
                         + (((clase_1 + clase_2 + clase_3) / 3) * 0.15) + (((sustentacion_1 + sustentacion_2 + sustentacion_3) / 3) * 0.15)
                         + (((evaluacion_1 + evaluacion_2 + evaluacion_3) / 3) * 0.35);
                 
                 if ( nivelo|| recupero){
+                    System.out.println("Nivelo o recupero");
                     definitiva = 3.5;
                 }
                 else{
@@ -1388,15 +1407,26 @@ public class Notas extends javax.swing.JFrame {
                     definitiva_letra="S";
                 }
                 
-                
+                DecimalFormat df = new DecimalFormat("0.00");
+                definitiva = Double.parseDouble(df.format(definitiva).replace(",", "."));
+                fase = Double.parseDouble(df.format(fase).replace(",", "."));
                 
                 Statement st3 = con.createStatement();
-                String sql3 = "INSERT INTO notas (fase,definitiva,supero,definitiva_letra) values "
-                        + "(" + fase + "," + definitiva + ",'"+supero+ "','"+ definitiva_letra + "') where (codigo_asignatura='"
+                String sql3 = "UPDATE notas set fase="+fase+",definitiva="+definitiva+",supero='"+supero
+                        + "',definitiva_letra='"+definitiva_letra+"' where (codigo_asignatura='"
                     + codAsignaturaActual + "' AND grado='" + gradoActual + "') AND (periodo='" + periodoActual
                     + "' AND documento_estudiante='" + docEst + "')" ;
                 
                 st3.executeUpdate(sql3);
+                
+                JLabel lblFase = (JLabel)mapaDefinitivas.get(docEst+"-fase");
+                lblFase.setText(fase.toString());
+                JLabel lblDef = (JLabel)mapaDefinitivas.get(docEst+"-definitiva");
+                lblDef.setText(definitiva.toString());
+                JLabel lblSupero = (JLabel)mapaDefinitivas.get(docEst+"-supero");
+                lblSupero.setText(supero);
+                JLabel lblDefLetra = (JLabel)mapaDefinitivas.get(docEst+"-definitiva_letra");
+                lblDefLetra.setText(definitiva_letra);
                 
                 st3.close();
             }
@@ -1406,5 +1436,8 @@ public class Notas extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
     }
+    
+    // HasMap con la llave un String que tenga dos partes, docEst y el nombre del textfield
 }

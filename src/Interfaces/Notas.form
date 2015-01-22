@@ -51,7 +51,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="panelesEstudiantes = new ArrayList&lt;JPanel&gt;();&#xa;mapa = new HashMap&lt;Component, String&gt;();"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="panelesEstudiantes = new ArrayList&lt;JPanel&gt;();&#xa;mapa = new HashMap&lt;Component, String&gt;();&#xa;mapaDefinitivas = new HashMap&lt;String, Component&gt;&#xa;();"/>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel()"/>
       </AuxValues>
       <Constraints>
