@@ -1209,12 +1209,15 @@ public class Notas extends javax.swing.JFrame {
                                 + "documento_estudiante) values (" + valor + ",'" + codAsignaturaActual + "','" + gradoActual
                                 + "','" + periodoActual + "','" + docEst + "')";
                         st2.execute(sql2);
+                        
+                        st2.close();
                     } else {
                         System.out.println(resp);
                         st.close();
                         con.close();
                     }
                     txt.setText(valor.toString());
+                    calcularDefinitiva(docEst);
                 } catch (Exception e) {
                     e.printStackTrace();
 
@@ -1257,6 +1260,8 @@ public class Notas extends javax.swing.JFrame {
                                 + "documento_estudiante) values (" + valor + ",'" + codAsignaturaActual + "','" + gradoActual
                                 + "','" + periodoActual + "','" + docEst + "')";
                         st2.execute(sql2);
+                        
+                        st2.close();
                     } else {
                         System.out.println(resp);
                         st.close();
@@ -1279,16 +1284,15 @@ public class Notas extends javax.swing.JFrame {
 
     private void modificarBox(String campo, int stateChange, String docEst) {
 
-        
         Connection con = null;
         Statement st = null;
         try {
-            int valor = (stateChange==1)?1:0;
+            int valor = (stateChange == 1) ? 1 : 0;
             System.out.println("lost " + docEst + "-" + valor);
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3307/americano", "root", "admin");
             st = con.createStatement();
-            String sql = "UPDATE notas set "+campo+"=" + valor + " where (codigo_asignatura='"
+            String sql = "UPDATE notas set " + campo + "=" + valor + " where (codigo_asignatura='"
                     + codAsignaturaActual + "' AND grado='" + gradoActual + "') AND (periodo='" + periodoActual
                     + "' AND documento_estudiante='" + docEst + "')";
 
@@ -1296,22 +1300,111 @@ public class Notas extends javax.swing.JFrame {
 
             if (resp == 0) {
                 Statement st2 = con.createStatement();
-                String sql2 = "INSERT INTO notas ("+campo+",codigo_asignatura,grado,periodo,"
+                String sql2 = "INSERT INTO notas (" + campo + ",codigo_asignatura,grado,periodo,"
                         + "documento_estudiante) values (" + valor + ",'" + codAsignaturaActual + "','" + gradoActual
                         + "','" + periodoActual + "','" + docEst + "')";
                 st2.execute(sql2);
+                
+                st2.close();
+                
             } else {
                 System.out.println(resp);
+                
                 st.close();
                 con.close();
             }
 
+            calcularDefinitiva(docEst);
         } catch (Exception e) {
             e.printStackTrace();
 
         }
 
     }
-    
-    //TODO Calcular definitivas, cuando se marque un checkbox modificar cosas
+
+    //TODO Calcular definitivas, cuando se marque un checkbox modificar nota
+    private void calcularDefinitiva(String docEst) {
+
+        Connection con = null;
+        Statement st = null;
+        try {
+            st = con.createStatement();
+            String sql2 = "Select * from notas where ( codigo_asignatura='" + codAsignaturaActual + "' AND  "
+                    + "grado='" + gradoActual + "' ) AND ( periodo='" + periodoActual
+                    + "' AND documento_estudiante='" + docEst + "')";
+
+            ResultSet rs2 = st.executeQuery(sql2);
+
+            String supero, definitiva_letra;
+            int fallas;
+            boolean nivelo, recupero;
+            Double co_ev_1, co_ev_2, extraclase_1, extraclase_2, extraclase_3, clase_1, clase_2, clase_3
+                    , sustentacion_1, sustentacion_2, sustentacion_3, evaluacion_1, evaluacion_2, evaluacion_3,definitiva;
+
+            // Hay notas registradas
+            if (rs2.next()) {
+
+                co_ev_1 = rs2.getDouble("co_ev_1");
+                co_ev_2 = rs2.getDouble("co_ev_2");
+                extraclase_1 = rs2.getDouble("extraclase_1");
+                extraclase_2 = rs2.getDouble("extraclase_2");
+                extraclase_3 = rs2.getDouble("extraclase_3");
+                clase_1 = rs2.getDouble("clase_1");
+                clase_2 = rs2.getDouble("clase_2");
+                clase_3 = rs2.getDouble("clase_3");
+                sustentacion_1 = rs2.getDouble("sustentacion_1");
+                sustentacion_2 = rs2.getDouble("sustentacion_2");
+                sustentacion_3 = rs2.getDouble("sustentacion_3");
+                evaluacion_1 = rs2.getDouble("evaluacion_1");
+                evaluacion_2 = rs2.getDouble("evaluacion_2");
+                evaluacion_3 = rs2.getDouble("evaluacion_3");
+
+                fallas = rs2.getInt("fallas");
+                nivelo = (rs2.getInt("nivelo") > 0);
+                recupero = (rs2.getInt("nivelo") > 0);
+
+                Double fase = (co_ev_1 * 0.1) + (co_ev_2 * 0.1) + (((extraclase_1 + extraclase_2 + extraclase_3) / 3) * 0.15)
+                        + (((clase_1 + clase_2 + clase_3) / 3) * 0.15) + (((sustentacion_1 + sustentacion_2 + sustentacion_3) / 3) * 0.15)
+                        + (((evaluacion_1 + evaluacion_2 + evaluacion_3) / 3) * 0.35);
+                
+                if ( nivelo|| recupero){
+                    definitiva = 3.5;
+                }
+                else{
+                    definitiva = fase;
+                }
+                supero = (definitiva<3.5)?"NO":"SI";
+                
+                if ( definitiva < 3.5){
+                    definitiva_letra = "I";
+                }
+                else if ( definitiva < 4){
+                    definitiva_letra= "B";
+                }
+                else if ( definitiva < 4.6 ){
+                    definitiva_letra="A";
+                }
+                else{
+                    definitiva_letra="S";
+                }
+                
+                
+                
+                Statement st3 = con.createStatement();
+                String sql3 = "INSERT INTO notas (fase,definitiva,supero,definitiva_letra) values "
+                        + "(" + fase + "," + definitiva + ",'"+supero+ "','"+ definitiva_letra + "') where (codigo_asignatura='"
+                    + codAsignaturaActual + "' AND grado='" + gradoActual + "') AND (periodo='" + periodoActual
+                    + "' AND documento_estudiante='" + docEst + "')" ;
+                
+                st3.executeUpdate(sql3);
+                
+                st3.close();
+            }
+
+            st.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
