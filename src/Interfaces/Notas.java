@@ -1367,23 +1367,81 @@ public class Notas extends javax.swing.JFrame {
                 extraclase_1 = rs2.getDouble("extraclase_1");
                 extraclase_2 = rs2.getDouble("extraclase_2");
                 extraclase_3 = rs2.getDouble("extraclase_3");
+                
+                
+                int contExtra = 0;
+
+                if (extraclase_1 > 0.0) {
+                    contExtra++;
+                }
+                if (extraclase_2 > 0.0) {
+                    contExtra++;
+                }
+                if (extraclase_3 > 0.0) {
+                    contExtra++;
+                }
+
+                double avgExtra = (extraclase_1 + extraclase_2 + extraclase_3) / contExtra;
+                
                 clase_1 = rs2.getDouble("clase_1");
                 clase_2 = rs2.getDouble("clase_2");
                 clase_3 = rs2.getDouble("clase_3");
+                
+                int contClase = 0;
+
+                if (clase_1 > 0.0) {
+                    contClase++;
+                }
+                if (clase_2 > 0.0) {
+                    contClase++;
+                }
+                if (clase_3 > 0.0) {
+                    contClase++;
+                }
+
+                double avgClase = (clase_1 + clase_2 + clase_3) / contClase;
                 sustentacion_1 = rs2.getDouble("sustentacion_1");
                 sustentacion_2 = rs2.getDouble("sustentacion_2");
                 sustentacion_3 = rs2.getDouble("sustentacion_3");
+                
+                int contSust = 0;
+
+                if (sustentacion_1 > 0.0) {
+                    contSust++;
+                }
+                if (sustentacion_2 > 0.0) {
+                    contSust++;
+                }
+                if (sustentacion_3 > 0.0) {
+                    contSust++;
+                }
+
+                double avgSust = (sustentacion_1 + sustentacion_2 + sustentacion_3) / contSust;
                 evaluacion_1 = rs2.getDouble("evaluacion_1");
                 evaluacion_2 = rs2.getDouble("evaluacion_2");
                 evaluacion_3 = rs2.getDouble("evaluacion_3");
+                
+                int contEv = 0;
+
+                if (evaluacion_1 > 0.0) {
+                    contEv++;
+                }
+                if (evaluacion_2 > 0.0) {
+                    contEv++;
+                }
+                if (evaluacion_3 > 0.0) {
+                    contEv++;
+                }
+
+                double avgEv = (evaluacion_1 + evaluacion_2 + evaluacion_3) / contEv;
 
                 fallas = rs2.getInt("fallas");
                 nivelo = (rs2.getInt("nivelo") > 0);
                 recupero = (rs2.getInt("recupero") > 0);
 
-                Double fase = (co_ev_1 * 0.1) + (co_ev_2 * 0.1) + (((extraclase_1 + extraclase_2 + extraclase_3) / 3) * 0.15)
-                        + (((clase_1 + clase_2 + clase_3) / 3) * 0.15) + (((sustentacion_1 + sustentacion_2 + sustentacion_3) / 3) * 0.15)
-                        + (((evaluacion_1 + evaluacion_2 + evaluacion_3) / 3) * 0.35);
+                Double fase = (co_ev_1 * 0.1) + (co_ev_2 * 0.1) + (avgExtra * 0.15)
+                        + (avgClase * 0.15) + (avgSust * 0.15)
+                        + (avgEv * 0.35);
                 
                 if ( nivelo|| recupero){
                     System.out.println("Nivelo o recupero");
