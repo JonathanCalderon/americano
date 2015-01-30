@@ -1381,7 +1381,7 @@ public class Notas extends javax.swing.JFrame {
                     contExtra++;
                 }
 
-                double avgExtra = (extraclase_1 + extraclase_2 + extraclase_3) / contExtra;
+                double avgExtra = (contExtra == 0)?0:(extraclase_1 + extraclase_2 + extraclase_3) / contExtra;
                 
                 clase_1 = rs2.getDouble("clase_1");
                 clase_2 = rs2.getDouble("clase_2");
@@ -1399,7 +1399,7 @@ public class Notas extends javax.swing.JFrame {
                     contClase++;
                 }
 
-                double avgClase = (clase_1 + clase_2 + clase_3) / contClase;
+                double avgClase = (contClase==0)?0:(clase_1 + clase_2 + clase_3) / contClase;
                 sustentacion_1 = rs2.getDouble("sustentacion_1");
                 sustentacion_2 = rs2.getDouble("sustentacion_2");
                 sustentacion_3 = rs2.getDouble("sustentacion_3");
@@ -1416,7 +1416,7 @@ public class Notas extends javax.swing.JFrame {
                     contSust++;
                 }
 
-                double avgSust = (sustentacion_1 + sustentacion_2 + sustentacion_3) / contSust;
+                double avgSust = (contSust==0)?0:(sustentacion_1 + sustentacion_2 + sustentacion_3) / contSust;
                 evaluacion_1 = rs2.getDouble("evaluacion_1");
                 evaluacion_2 = rs2.getDouble("evaluacion_2");
                 evaluacion_3 = rs2.getDouble("evaluacion_3");
@@ -1433,7 +1433,7 @@ public class Notas extends javax.swing.JFrame {
                     contEv++;
                 }
 
-                double avgEv = (evaluacion_1 + evaluacion_2 + evaluacion_3) / contEv;
+                double avgEv = (contEv==0)?0:(evaluacion_1 + evaluacion_2 + evaluacion_3) / contEv;
 
                 fallas = rs2.getInt("fallas");
                 nivelo = (rs2.getInt("nivelo") > 0);
@@ -1465,6 +1465,7 @@ public class Notas extends javax.swing.JFrame {
                     definitiva_letra="S";
                 }
                 
+                System.out.println("fase "+fase);
                 DecimalFormat df = new DecimalFormat("0.00");
                 definitiva = Double.parseDouble(df.format(definitiva).replace(",", "."));
                 fase = Double.parseDouble(df.format(fase).replace(",", "."));
